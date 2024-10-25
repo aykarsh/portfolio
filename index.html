@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./img/IG2.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Akarsh Narayanan| Portfolio</title>
+    <style>
+      html{
+        scroll-behavior: smooth;
+        scroll-padding:5rem ;
+      }
+      body {
+        /* background: #4285f4; (blue color code of google) */
+        background-color: rgb(0, 0, 33);
+        color: white;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .clr {
+        color: rgb(153, 97, 206);
+      }
+      .hr {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        text-align: center;
+      }
+      /* Navbar */
+      header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 65px;
+        background-color: rgb(18, 18, 62);
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        position: relative;
+        font-family: "Inter", sans-serif;
+      }
+      nav ul li a:hover, nav ul li a:focus, nav ul li a.active {
+        color: rgb(153, 97, 206);
+      }
+      /*  */
+      /*UnderLine Effect */
+      nav ul li a::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: rgb(153, 97, 206);
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+        pointer-events: none;
+      }
+      nav ul li a:hover::after,
+      nav ul li a:focus::after,
+      nav ul li a.active::after
+      {
+        opacity: 1;
+      }
+      /*  */
+      .left {
+        font-size: 1.5rem;
+        font-family: "Poppins", sans-serif;
+        font: bold;
+      }
+      .left a {
+        text-decoration: none;
+        color: lavender;
+        font-family: "Inter", sans-serif;
+        font-weight: bold;
+      }
+      /* Home Section */
+      .homeSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 125px 0;
+      }
+      .homeSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        font-size: 1.5rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .btn {
+        margin: 24px 15px;
+        padding: 8px;
+        width: 165px;
+        background-color: rgb(30, 144, 255);
+        border-radius: 20px;
+        border: 2px solid rgb(30, 144, 255);
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        color: white;
+      }
+      .btn:hover {
+        transform: scale(1.02);
+        box-shadow: rgba(125, 194, 234, 0.6) 0px 2px 8px;
+        background-color: transparent;
+      }
+      .links{
+        display: flex;
+      }
+      .lk{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 18px;
+        width: 50px;
+        height: 50px;
+        background-color: dodgerblue;
+        border: 2px solid dodgerblue;
+        border-radius: 50%;
+      }
+      .lk:hover{
+        /* background-color: rgb(33, 33, 98); */
+        background: transparent;
+      }
+      .lk img{
+        display: flex;
+        filter: invert(1);
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+      }
+      .rightSection img {
+        width: 80%;
+        /* margin: 50px 0; */
+      }
+      main hr {
+        border: 0;
+        background: rgb(133, 133, 239);
+        height: 1px;
+        margin: 40px 84px;
+      }
+      /* About Section */
+      .aboutSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 40px 0;
+      }
+      .aboutSection > div {
+        width: 30%;
+      }
+      .top {
+        margin: 24px 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .head {
+        font-size: 1.75rem;
+      }
+      .desc {
+        margin: 25px 0;
+        font-family: "Inter", sans-serif;
+      }
+      .bottom {
+        font-family: "Roboto", sans-serif;
+      }
+      .pic {
+        border-radius: 20px;
+        width: 30vw;
+        height: 60vh;
+        box-shadow: rgba(125, 194, 234, 0.6) 0px 4px 10px;
+      }
+      .pic img {
+        width: 30vw;
+        height: 60vh;
+        border-radius: 20px;
+      }
+      .pic:hover {
+        transform: scale(1.02);
+        box-shadow: rgba(125, 194, 234, 0.6) 0px 6px 12px;
+      }
+      /* Skills Section */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 2px;
+        margin: 24px 240px;
+        background-color: rgb(5, 5, 52);
+        border-radius: 15px;
+      }
+      .sk {
+        margin: 2px;
+        margin-left: 19px;
+        margin-top: 16px;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* background-color: rgb(10, 10, 66); */
+        background: linear-gradient(to bottom,rgb(5, 5, 52),rgb(10, 10, 66));
+        border-radius: 12px;
+      }
+      .sk:hover {
+        transform: scale(1.03);
+        box-shadow: rgb(14, 14, 89) 0px 6px 12px;
+      }
+      .skd {
+        margin-top: 4px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .sk img {
+        width: 80px;
+        height: 80px;
+      }
+      /*  */
+      /* Education */
+      .edu{
+        margin: 60px 120px;
+      }
+      .skl:hover{
+        transform: scale(1.01);
+        box-shadow: rgb(14, 14, 89) 0px 6px 12px;
+      }
+      .edu img{
+        width: 250px;
+        height: 170px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+      .skl{
+        display: flex;
+        margin: 24px 107px;
+        /* background-color: rgb(5, 5, 52);
+        border-radius: 20px; */
+        border-radius: 50px;
+        background: #050520;
+        box-shadow:  20px 20px 31px #02020e,
+             -20px -20px 31px #080832;
+      }
+      .ed{
+        margin-top: 25px;
+        
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+      .ed a{
+        text-decoration: none;
+        color: rgb(15, 66, 196);
+      }
+      /*  */
+      /* Footer */
+      footer{
+        background-color: rgb(18, 18, 62); 
+        color: white;
+      }
+      .fthr{
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+      }
+      .ftr{
+        display: flex;
+        /* margin: 50px; */
+      }
+      .lftr{
+        margin: 50px 127px;
+        width: 35%;
+      }
+      .rftr{
+        margin: 55px 75px;
+        width: 35%;
+      }
+      .fd{
+        font-family: "Roboto", sans-serif;
+      }
+      .cif{
+        display: flex;
+      }
+      .cif img{
+        width: 20px;
+        height: 20px;
+        filter: invert(1);
+        margin: 6px;
+      }
+      .cif p{
+        margin: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">
+          <a href="./index.html">Akarsh Narayanan</a>
+        </div>
+        <div class="right">
+          <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="homeSection">
+        <div class="leftSection">
+          Hi!,My name is
+          <span id="element" class="clr"></span>
+          <div>
+            and I am a passionate
+            <span class="clr">Web Developer</span>
+          </div>
+          <div class="resume">
+            <a href="./Jash Resume.pdf" target="_blank"
+              ><button class="btn">View My Resume</button></a
+            >
+          </div>
+          <div class="links">
+            <div class="lk"><a href="https://www.linkedin.com/in/akarsh-narayanan-707a10229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="./img/linkedIn.png" alt=""></a></div>
+            <div class="lk"><a href="" target="_blank"><img src="./img/twitter.png" alt=""></a></div>
+            <div class="lk"><a href="https://github.com/aykarsh" target="_blank"><img src="./img/githb.png" alt=""></a></div>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="./img/dev-p2.png" alt="" />
+        </div>
+      </section>
+      <hr />
+      <!-- About Section -->
+      <div class="hr">About Me</div>
+      <section id="about" class="aboutSection">
+        <div class="abt">
+          <div class="top">
+            <span class="head clr">I'm Akarsh Narayanan</span><br />
+            Passionate Web Developer
+          </div>
+          <div class="desc">
+            I am Akarsh Narayanan, A Passionate Individual Driving Positive
+            Change in Technology and Education.With Strong Skills In Python, C++, Web
+            Development, And Management, I Aim To Make A Transformative Impact
+            And Inspire Future Tech Enthusiasts.Graduating In 2027 With A
+            Bachelor's In Computer Science And Engineering From SRM University,
+            Chennai. Collaboration, Innovation, And Lifelong Learning Are At The
+            Heart Of My Pursuits.
+          </div>
+          <div class="bottom">
+            <div><span class="clr">College:</span>&nbsp;&nbsp;SRM-IST</div>
+            <div>
+              <span class="clr">Email:</span>&nbsp;&nbsp;akarshnarayanan1312@gmail.com
+            </div>
+            <div>
+              <span class="clr">Place:</span>&nbsp;&nbsp;Chennai,Tamil Nadu,India
+            </div>
+          </div>
+        </div>
+        <div class="pic">
+          <img src="./img/WhatsApp Image 2024-10-25 at 1.32.43 PM.jpeg" alt="" />
+        </div>
+      </section>
+      <hr />
+      <!--  -->
+      <!-- SKills Section -->
+      <div class="hr">Skills</div>
+      <section id="skills" class="skillsSection">
+        <div class="container">
+          <div class="sk">
+            <img src="./img/html.png" alt="" />
+            <div class="skd">HTML5</div>
+          </div>
+          <div class="sk">
+            <img src="./img/css.png" alt="" />
+            <div class="skd">CSS3</div>
+          </div>
+          <div class="sk">
+            <img src="./img/javascript.png" alt="" />
+            <div class="skd">JAVASCRIPT</div>
+          </div>
+          <div class="sk">
+            <img src="./img/pythonLogo.png" alt="" />
+            <div class="skd">PYTHON</div>
+          </div>
+          <div class="sk">
+            <img src="./img/cppLogo.png" alt="" />
+            <div class="skd">C++</div>
+          </div>
+          <div class="sk">
+            <img src="./img/github.png" alt="" />
+            <div class="skd">GIT HUB</div>
+          </div>
+          <div class="sk">
+            <img src="./img/git2.png" alt="" />
+            <div class="skd">GIT VCS</div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!--  -->
+      <!-- Education -->
+      <section id="education" class="eduSection">
+        <div class="hr">My <span class="clr">Education</span></div>
+          <div class="edu">
+            <div class="skl"><img src="./img/srm.jpeg" alt="" />
+              <div class="ed"><span class="clr" style="font-weight: bold; font-size:x-large;">Bachelor of Engineering In Computer Science</span> <br> <a href="https://srmrmp.edu.in/" target="_blank">SRM Institute of Science and Technology(RMP)</a> <br> 2023-2027 | Pursuing
+              </div>
+            </div>
+            <div class="skl"><img src="./img/dav.jpeg" alt="" />
+              <div class="ed" style="margin-left: 60px;"><span class="clr" style="font-weight: bold; font-size:x-large;">Higher Secondary | Science</span> <br> <a href="http://davchennai.org/" target="_blank">  The Choice</a> <br> 2021-2023 | Completed
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--  -->
+    <footer>
+      <div class="ftr">
+        <div class="lftr">
+          <div class="fthr clr">Akarsh Narayanan's Portfolio</div>
+          <div class="fd"><p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p> <br> <p>Please wait for a while all major projects will be listed soon. Till then keep visiting.
+          </p></div>
+        </div>
+        <div class="rftr">
+          <div class="fthr clr">Contact Info</div>
+          <div class="cif"><img src="./img/mail.png" alt=""><p>akarshnarayanan1312@gmail.com</p></div>
+          <div class="cif"><img src="./img/call-icon.png" alt=""><p>+91 9188583218</p></div>
+          <div class="cif"><img src="./img/location.png" alt=""><p>Chennai,India-600040</p></div>
+        </div>
+      </div>
+      <div style="text-align: center;">Copyright &copy;2023</div>
+    </footer>
+    <!--  -->
+    <!--  -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!--  -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Akarsh Narayanan"],
+        typeSpeed: 50,
+      });
+    </script>
+    <script>
+      let sections= document.querySelectorAll('section')
+      let navLinks = document.querySelectorAll('nav ul li a')
+      window.onscroll=()=>{
+        sections.forEach(sec =>{
+          let top= window.scrollY;
+          let offset = sec.offsetTop;
+          let height = sec.offsetHeight;
+          let id = sec.getAttribute('id');
+          // 
+          if(top>=offset && top < offset + height){
+            navLinks.forEach(links =>{
+              links.classList.remove('active')
+              document.querySelector('nav ul li a[href*='+ id + ']').classList.add('active')
+            })
+          }
+        })
+      };
+    </script>
+  </body>
+</html>
